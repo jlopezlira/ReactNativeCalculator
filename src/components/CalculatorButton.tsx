@@ -1,4 +1,4 @@
-import {Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, StyleSheet, TouchableOpacity, Platform} from 'react-native';
 import React from 'react';
 import {Variants, Props} from '../types/index';
 
@@ -24,6 +24,14 @@ const CalculatorButton = ({action, label, large, variant}: Props) => {
     }
   };
 
+  const ios = {
+    flex: large ? 1 : 0,
+  };
+
+  const android = {
+    width: large ? '43%' : 80,
+  };
+
   const styles = StyleSheet.create({
     button: {
       alignItems: 'center',
@@ -33,7 +41,7 @@ const CalculatorButton = ({action, label, large, variant}: Props) => {
       justifyContent: 'center',
       width: 80,
       marginHorizontal: 5,
-      flex: large ? 1 : 0,
+      ...(Platform.OS === 'android' ? android : ios),
     },
     buttonText: {
       color: setFontColor(),
