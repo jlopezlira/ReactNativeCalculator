@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     fontSize: 60,
     textAlign: 'right',
   },
-  previousOperationResult: {
+  previousNumber: {
     color: 'rgba(255, 255, 255, 0.5)',
     fontSize: 30,
     textAlign: 'right',

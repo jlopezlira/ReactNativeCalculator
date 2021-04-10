@@ -1,21 +1,13 @@
 import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
-
-type Color = 'alt' | 'warning';
-
-interface Props {
-  action: (value: string) => void;
-  label: string;
-  large?: boolean;
-  variant?: Color;
-}
+import {Variants, Props} from '../types/index';
 
 const CalculatorButton = ({action, label, large, variant}: Props) => {
   const setBackgroundColor = (): string => {
     switch (variant) {
-      case 'warning':
+      case Variants.warning:
         return '#EC9E07';
-      case 'alt':
+      case Variants.alt:
         return '#9b9b9b';
       default:
         return '#343434';
@@ -24,9 +16,9 @@ const CalculatorButton = ({action, label, large, variant}: Props) => {
 
   const setFontColor = (): string => {
     switch (variant) {
-      case 'alt':
+      case Variants.alt:
         return 'black';
-      case 'warning':
+      case Variants.warning:
       default:
         return 'white';
     }
